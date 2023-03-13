@@ -45,6 +45,17 @@ public class ValidatingRegistrations {
         Matcher matcher = pattern.matcher(userDetails.MobileNumber);
         boolean m = matcher.matches();
         System.out.println(m);
+    }
+    public void getPassword() {
+        ValidatingRegistrations user = new ValidatingRegistrations();
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the Last name");
+        DetailsOfUser userDetails = new DetailsOfUser(scanner.nextLine());
+        Pattern pattern = Pattern.compile("[A-Z]{1}[A-Za-z]{4,}[0-9]{1,}+[@#$&^%~]");
+        Matcher matcher = pattern.matcher(userDetails.Password);
+        boolean m = matcher.matches();
+        System.out.println(m);
+    }
 
        public static void main(String[] args){
             ValidatingRegistrations user = new ValidatingRegistrations();
@@ -52,6 +63,7 @@ public class ValidatingRegistrations {
             user.getLastName();
             user.getEmail();
             user.getMobileNumber();
+            user.getPassword();
         }
-    }}
+    }
 
