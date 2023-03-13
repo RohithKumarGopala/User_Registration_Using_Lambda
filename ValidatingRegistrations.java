@@ -26,6 +26,16 @@ public class ValidatingRegistrations {
         boolean m = matcher.matches();
         System.out.println(m);
     }
+    public void getEmail() {
+        ValidatingRegistrations user = new ValidatingRegistrations();
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the Last name");
+        DetailsOfUser userDetails = new DetailsOfUser(scanner.nextLine());
+        Pattern pattern = Pattern.compile("[abc]{3}.[a-z]{3}+@[bl]{2}.[co]{2}.[a-z]{2}+");
+        Matcher matcher = pattern.matcher(userDetails.Email);
+        boolean m = matcher.matches();
+        System.out.println(m);
+    }
     public static void main(String[] args) {
         ValidatingRegistrations user=new ValidatingRegistrations();
         user.getFirstName();
