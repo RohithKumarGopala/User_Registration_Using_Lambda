@@ -36,10 +36,22 @@ public class ValidatingRegistrations {
         boolean m = matcher.matches();
         System.out.println(m);
     }
-    public static void main(String[] args) {
-        ValidatingRegistrations user=new ValidatingRegistrations();
-        user.getFirstName();
-        user.getLastName();
-    }
-}
+    public void getMobileNumber() {
+        ValidatingRegistrations user = new ValidatingRegistrations();
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the Last name");
+        DetailsOfUser userDetails = new DetailsOfUser(scanner.nextLine());
+        Pattern pattern = Pattern.compile("([91]{2}+\\s[0-9]{10})");
+        Matcher matcher = pattern.matcher(userDetails.MobileNumber);
+        boolean m = matcher.matches();
+        System.out.println(m);
+
+       public static void main(String[] args){
+            ValidatingRegistrations user = new ValidatingRegistrations();
+            user.getFirstName();
+            user.getLastName();
+            user.getEmail();
+            user.getMobileNumber();
+        }
+    }}
 
