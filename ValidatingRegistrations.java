@@ -10,15 +10,26 @@ public class ValidatingRegistrations {
         ValidatingRegistrations user = new ValidatingRegistrations();
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the first name");
-        DetailsOfUser detailsOfUser = new DetailsOfUser(scanner.nextLine());
+        DetailsOfUser userDetails = new DetailsOfUser(scanner.nextLine());
         Pattern pattern = Pattern.compile("([A-Z]{1,}[a-z]{3,})");
-        Matcher matcher = pattern.matcher(detailsOfUser.firstName);
+        Matcher matcher = pattern.matcher(userDetails.firstName);
+        boolean m = matcher.matches();
+        System.out.println(m);
+    }
+    public void getLastName() {
+        ValidatingRegistrations user = new ValidatingRegistrations();
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the Last name");
+        DetailsOfUser userDetails = new DetailsOfUser(scanner.nextLine());
+        Pattern pattern = Pattern.compile("([A-Z][a-z]{2,})");
+        Matcher matcher = pattern.matcher(userDetails.LastName);
         boolean m = matcher.matches();
         System.out.println(m);
     }
     public static void main(String[] args) {
-        ValidatingRegistrations users=new ValidatingRegistrations();
-        users.getFirstName();
+        ValidatingRegistrations user=new ValidatingRegistrations();
+        user.getFirstName();
+        user.getLastName();
     }
 }
 
